@@ -17,9 +17,39 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "web-authentication": {
+      "tags": []
+    },
+    "api-authentication": {
+      "tags": []
+    },
+    "shared-authentication-domain": {
+      "tags": []
+    },
+    "web-authentication-feature-change-settings": {
+      "tags": []
+    },
+    "web-authentication-feature-register": {
+      "tags": []
+    },
+    "web-authentication-feature-login": {
+      "tags": []
+    },
+    "web-authentication-shared-ui": {
+      "tags": []
+    },
+    "web-authentication-feature-my-profile": {
+      "tags": []
+    }
+  }
 }

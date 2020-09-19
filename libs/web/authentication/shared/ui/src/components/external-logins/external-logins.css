@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+}
+svg {
+  cursor: pointer;
+}
+.social-logins {
+  padding: 30px;
+}

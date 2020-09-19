@@ -1,7 +1,351 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "web-authentication": {
+      "projectType": "application",
+      "schematics": {
+        "@nxext/stencil:component": {
+          "style": "css",
+          "storybook": false
+        }
+      },
+      "root": "apps/web-authentication",
+      "sourceRoot": "apps/web-authentication/src",
+      "architect": {
+        "build": {
+          "builder": "@nxext/stencil:build",
+          "options": {
+            "projectType": "application",
+            "configPath": "apps/web-authentication/stencil.config.ts"
+          }
+        },
+        "test": {
+          "builder": "@nxext/stencil:test",
+          "options": {
+            "projectType": "application",
+            "configPath": "apps/web-authentication/stencil.config.ts"
+          }
+        },
+        "e2e": {
+          "builder": "@nxext/stencil:e2e",
+          "options": {
+            "projectType": "application",
+            "configPath": "apps/web-authentication/stencil.config.ts"
+          }
+        },
+        "serve": {
+          "builder": "@nxext/stencil:build",
+          "options": {
+            "projectType": "application",
+            "configPath": "apps/web-authentication/stencil.config.ts",
+            "serve": true,
+            "watch": true
+          }
+        }
+      }
+    },
+    "api-authentication": {
+      "root": "apps/api-authentication",
+      "sourceRoot": "apps/api-authentication/src",
+      "projectType": "application",
+      "prefix": "api-authentication",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/api-authentication",
+            "main": "apps/api-authentication/src/main.ts",
+            "tsConfig": "apps/api-authentication/tsconfig.app.json",
+            "assets": ["apps/api-authentication/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/api-authentication/src/environments/environment.ts",
+                  "with": "apps/api-authentication/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "api-authentication:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/api-authentication/tsconfig.app.json",
+              "apps/api-authentication/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/api-authentication/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/api-authentication/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-authentication-domain": {
+      "root": "libs/shared/authentication/domain",
+      "sourceRoot": "libs/shared/authentication/domain/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/shared/authentication/domain/tsconfig.lib.json",
+              "libs/shared/authentication/domain/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/authentication/domain/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/authentication/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "web-authentication-feature-change-settings": {
+      "projectType": "library",
+      "schematics": {
+        "@nxext/stencil:component": {
+          "style": "css",
+          "storybook": false
+        }
+      },
+      "root": "libs/web/authentication/feature-change-settings",
+      "sourceRoot": "libs/web/authentication/feature-change-settings/src",
+      "architect": {
+        "build": {
+          "builder": "@nxext/stencil:build",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-change-settings/stencil.config.ts"
+          }
+        },
+        "test": {
+          "builder": "@nxext/stencil:test",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-change-settings/stencil.config.ts"
+          }
+        },
+        "e2e": {
+          "builder": "@nxext/stencil:e2e",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-change-settings/stencil.config.ts"
+          }
+        },
+        "serve": {
+          "builder": "@nxext/stencil:build",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-change-settings/stencil.config.ts",
+            "serve": true,
+            "watch": true
+          }
+        }
+      }
+    },
+    "web-authentication-feature-register": {
+      "projectType": "library",
+      "schematics": {
+        "@nxext/stencil:component": {
+          "style": "css",
+          "storybook": false
+        }
+      },
+      "root": "libs/web/authentication/feature-register",
+      "sourceRoot": "libs/web/authentication/feature-register/src",
+      "architect": {
+        "build": {
+          "builder": "@nxext/stencil:build",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-register/stencil.config.ts"
+          }
+        },
+        "test": {
+          "builder": "@nxext/stencil:test",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-register/stencil.config.ts"
+          }
+        },
+        "e2e": {
+          "builder": "@nxext/stencil:e2e",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-register/stencil.config.ts"
+          }
+        },
+        "serve": {
+          "builder": "@nxext/stencil:build",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-register/stencil.config.ts",
+            "serve": true,
+            "watch": true
+          }
+        }
+      }
+    },
+    "web-authentication-feature-login": {
+      "projectType": "library",
+      "schematics": {
+        "@nxext/stencil:component": {
+          "style": "css",
+          "storybook": false
+        }
+      },
+      "root": "libs/web/authentication/feature-login",
+      "sourceRoot": "libs/web/authentication/feature-login/src",
+      "architect": {
+        "build": {
+          "builder": "@nxext/stencil:build",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-login/stencil.config.ts"
+          }
+        },
+        "test": {
+          "builder": "@nxext/stencil:test",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-login/stencil.config.ts"
+          }
+        },
+        "e2e": {
+          "builder": "@nxext/stencil:e2e",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-login/stencil.config.ts"
+          }
+        },
+        "serve": {
+          "builder": "@nxext/stencil:build",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-login/stencil.config.ts",
+            "serve": true,
+            "watch": true
+          }
+        }
+      }
+    },
+    "web-authentication-shared-ui": {
+      "projectType": "library",
+      "schematics": {
+        "@nxext/stencil:component": {
+          "style": "css",
+          "storybook": false
+        }
+      },
+      "root": "libs/web/authentication/shared/ui",
+      "sourceRoot": "libs/web/authentication/shared/ui/src",
+      "architect": {
+        "build": {
+          "builder": "@nxext/stencil:build",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/shared/ui/stencil.config.ts"
+          }
+        },
+        "test": {
+          "builder": "@nxext/stencil:test",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/shared/ui/stencil.config.ts"
+          }
+        },
+        "e2e": {
+          "builder": "@nxext/stencil:e2e",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/shared/ui/stencil.config.ts"
+          }
+        },
+        "serve": {
+          "builder": "@nxext/stencil:build",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/shared/ui/stencil.config.ts",
+            "serve": true,
+            "watch": true
+          }
+        }
+      }
+    },
+    "web-authentication-feature-my-profile": {
+      "projectType": "library",
+      "schematics": {
+        "@nxext/stencil:component": {
+          "style": "css",
+          "storybook": false
+        }
+      },
+      "root": "libs/web/authentication/feature-my-profile",
+      "sourceRoot": "libs/web/authentication/feature-my-profile/src",
+      "architect": {
+        "build": {
+          "builder": "@nxext/stencil:build",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-my-profile/stencil.config.ts"
+          }
+        },
+        "test": {
+          "builder": "@nxext/stencil:test",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-my-profile/stencil.config.ts"
+          }
+        },
+        "e2e": {
+          "builder": "@nxext/stencil:e2e",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-my-profile/stencil.config.ts"
+          }
+        },
+        "serve": {
+          "builder": "@nxext/stencil:build",
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/web/authentication/feature-my-profile/stencil.config.ts",
+            "serve": true,
+            "watch": true
+          }
+        }
+      }
+    }
+   },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nxext/stencil"
+  },
+  "defaultProject": "api-authentication"
 }

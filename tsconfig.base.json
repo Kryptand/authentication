@@ -10,12 +10,54 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@authentication/shared/authentication/domain": [
+        "libs/shared/authentication/domain/src/index.ts"
+      ],
+      "@authentication/web/authentication/feature-change-settings": [
+        "libs/web/authentication/feature-change-settings/src/index.ts"
+      ],
+      "@authentication/web/authentication/feature-change-settings/loader": [
+        "dist/libs/web/authentication/feature-change-settings/loader"
+      ],
+      "@authentication/web/authentication/feature-register": [
+        "libs/web/authentication/feature-register/src/index.ts"
+      ],
+      "@authentication/web/authentication/feature-register/loader": [
+        "dist/libs/web/authentication/feature-register/loader"
+      ],
+      "@authentication/web/authentication/feature-login": [
+        "libs/web/authentication/feature-login/src/index.ts"
+      ],
+      "@authentication/web/authentication/feature-login/loader": [
+        "dist/libs/web/authentication/feature-login/loader"
+      ],
+      "@authentication/web/authentication/shared/ui": [
+        "libs/web/authentication/shared/ui/src/index.ts"
+      ],
+      "@authentication/web/authentication/shared/ui/loader": [
+        "dist/libs/web/authentication/shared/ui/loader"
+      ],
+      "@authentication/web/authentication/feature-my-profile": [
+        "libs/web/authentication/feature-my-profile/src/index.ts"
+      ],
+      "@authentication/web/authentication/feature-my-profile/loader": [
+        "dist/libs/web/authentication/feature-my-profile/loader"
+      ]
+    }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
