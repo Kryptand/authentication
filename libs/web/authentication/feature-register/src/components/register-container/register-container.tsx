@@ -1,13 +1,11 @@
 import { Component, h, Prop } from '@stencil/core';
-import '@authentication/web/authentication/shared/ui';
-import '@kryptand/transmono';
 
 @Component({
-  tag: 'kryptand-login-container',
-  styleUrl: 'login-container.css',
+  tag: 'kryptand-register-container',
+  styleUrl: 'register-container.css',
   shadow: true,
 })
-export class LoginContainer {
+export class RegisterContainer {
   @Prop() theme: 'light' | 'dark';
   private handleFormSubmit(ev: CustomEvent<any>) {
     const { detail } = ev;
@@ -32,8 +30,9 @@ export class LoginContainer {
           <kryptand-centered-card>
             <kryptand-introduction-card>
               <kryptand-product-icon slot="icon" />
-              <kryptand-translate name="loginTitle" slot="title" />
-              <kryptand-login-form
+              <kryptand-translate name="registerTitle" slot="title" />
+              <kryptand-translate name="registerSubtitle" slot="subtitle" />
+              <kryptand-register-form
                 onFormSubmit={(ev) => this.handleFormSubmit(ev)}
                 slot="form"
               />
@@ -47,7 +46,7 @@ export class LoginContainer {
               <div slot="mode-switch">
                 <kryptand-translate name="noAccount" />
                 <a href="/bla" class="switch-type">
-                  <kryptand-translate name="register" />
+                  <kryptand-translate name="login" />
                 </a>
               </div>
             </kryptand-introduction-card>

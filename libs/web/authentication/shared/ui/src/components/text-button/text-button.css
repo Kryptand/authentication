@@ -1,3 +1,23 @@
 :host {
   display: block;
 }
+button {
+  width: 100%;
+  border-width: 0;
+  background: #2f80ed;
+  border-radius: 0.5rem;
+  border-color: unset;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  text-align: center;
+  letter-spacing: -0.035em;
+  padding: 0.39rem;
+  color: #ffffff;
+}
+button:focus,
+button:hover {
+  outline: unset;
+}

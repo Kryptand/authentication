@@ -17,6 +17,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [kryptand-login-container](../../../../../feature-login/src/components/login-container)
+
 ### Depends on
 
 - kryptand-translate
@@ -25,6 +29,7 @@
 ```mermaid
 graph TD;
   kryptand-external-logins --> kryptand-translate
+  kryptand-login-container --> kryptand-external-logins
   style kryptand-external-logins fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

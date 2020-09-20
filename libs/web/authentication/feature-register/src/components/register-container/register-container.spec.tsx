@@ -1,36 +1,36 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { ExternalLoginButton } from './external-login-button';
+import { RegisterContainer } from './register-container';
 
-describe('external-login-button', () => {
+describe('register-container', () => {
   it('renders', async () => {
     const {root} = await newSpecPage({
-      components: [ExternalLoginButton],
-      html: '<external-login-button></external-login-button>'
+      components: [RegisterContainer],
+      html: '<register-container></register-container>'
     });
     expect(root).toEqualHtml(`
-      <external-login-button>
+      <register-container>
         <mock:shadow-root>
           <div>
             Hello, World! I'm
           </div>
         </mock:shadow-root>
-      </external-login-button>
+      </register-container>
     `);
   });
 
   it('renders with values', async () => {
     const {root} = await newSpecPage({
-      components: [ExternalLoginButton],
-      html: `<external-login-button first="Stencil" last="'Don't call me a framework' JS"></external-login-button>`
+      components: [RegisterContainer],
+      html: `<register-container first="Stencil" last="'Don't call me a framework' JS"></register-container>`
     });
     expect(root).toEqualHtml(`
-      <external-login-button first="Stencil" last="'Don't call me a framework' JS">
+      <register-container first="Stencil" last="'Don't call me a framework' JS">
         <mock:shadow-root>
           <div>
             Hello, World! I'm Stencil 'Don't call me a framework' JS
           </div>
         </mock:shadow-root>
-      </external-login-button>
+      </register-container>
     `);
   });
 });

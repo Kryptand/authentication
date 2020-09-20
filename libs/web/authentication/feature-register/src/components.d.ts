@@ -6,56 +6,48 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface KryptandRegisterContainer {
+        "theme": 'light' | 'dark';
+    }
+    interface RegisterForm {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLKryptandRegisterContainerElement extends Components.KryptandRegisterContainer, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLKryptandRegisterContainerElement: {
+        prototype: HTMLKryptandRegisterContainerElement;
+        new (): HTMLKryptandRegisterContainerElement;
+    };
+    interface HTMLRegisterFormElement extends Components.RegisterForm, HTMLStencilElement {
+    }
+    var HTMLRegisterFormElement: {
+        prototype: HTMLRegisterFormElement;
+        new (): HTMLRegisterFormElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "kryptand-register-container": HTMLKryptandRegisterContainerElement;
+        "register-form": HTMLRegisterFormElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface KryptandRegisterContainer {
+        "theme"?: 'light' | 'dark';
+    }
+    interface RegisterForm {
+        "onFormSubmit"?: (event: CustomEvent<{ email: string; password: string }>) => void;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "kryptand-register-container": KryptandRegisterContainer;
+        "register-form": RegisterForm;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "kryptand-register-container": LocalJSX.KryptandRegisterContainer & JSXBase.HTMLAttributes<HTMLKryptandRegisterContainerElement>;
+            "register-form": LocalJSX.RegisterForm & JSXBase.HTMLAttributes<HTMLRegisterFormElement>;
         }
     }
 }

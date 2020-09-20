@@ -8,23 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AuthenticationRoot {
     }
-    interface InputWithIcon {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
     interface KryptandCenteredCard {
-    }
-    interface KryptandExternalLoginButton {
     }
     interface KryptandExternalLogins {
     }
@@ -35,8 +19,14 @@ export namespace Components {
     }
     interface KryptandLoginForm {
     }
+    interface KryptandLoginRegisterForm {
+        "buttonLabel": string;
+    }
     interface KryptandProductIcon {
         "theme": 'dark' | 'light';
+    }
+    interface KryptandTextButton {
+        "type": string;
     }
     interface NavBackButton {
         /**
@@ -80,20 +70,6 @@ export namespace Components {
          */
         "middle": string;
     }
-    interface TextButton {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
 }
 declare global {
     interface HTMLAuthenticationRootElement extends Components.AuthenticationRoot, HTMLStencilElement {
@@ -102,23 +78,11 @@ declare global {
         prototype: HTMLAuthenticationRootElement;
         new (): HTMLAuthenticationRootElement;
     };
-    interface HTMLInputWithIconElement extends Components.InputWithIcon, HTMLStencilElement {
-    }
-    var HTMLInputWithIconElement: {
-        prototype: HTMLInputWithIconElement;
-        new (): HTMLInputWithIconElement;
-    };
     interface HTMLKryptandCenteredCardElement extends Components.KryptandCenteredCard, HTMLStencilElement {
     }
     var HTMLKryptandCenteredCardElement: {
         prototype: HTMLKryptandCenteredCardElement;
         new (): HTMLKryptandCenteredCardElement;
-    };
-    interface HTMLKryptandExternalLoginButtonElement extends Components.KryptandExternalLoginButton, HTMLStencilElement {
-    }
-    var HTMLKryptandExternalLoginButtonElement: {
-        prototype: HTMLKryptandExternalLoginButtonElement;
-        new (): HTMLKryptandExternalLoginButtonElement;
     };
     interface HTMLKryptandExternalLoginsElement extends Components.KryptandExternalLogins, HTMLStencilElement {
     }
@@ -144,11 +108,23 @@ declare global {
         prototype: HTMLKryptandLoginFormElement;
         new (): HTMLKryptandLoginFormElement;
     };
+    interface HTMLKryptandLoginRegisterFormElement extends Components.KryptandLoginRegisterForm, HTMLStencilElement {
+    }
+    var HTMLKryptandLoginRegisterFormElement: {
+        prototype: HTMLKryptandLoginRegisterFormElement;
+        new (): HTMLKryptandLoginRegisterFormElement;
+    };
     interface HTMLKryptandProductIconElement extends Components.KryptandProductIcon, HTMLStencilElement {
     }
     var HTMLKryptandProductIconElement: {
         prototype: HTMLKryptandProductIconElement;
         new (): HTMLKryptandProductIconElement;
+    };
+    interface HTMLKryptandTextButtonElement extends Components.KryptandTextButton, HTMLStencilElement {
+    }
+    var HTMLKryptandTextButtonElement: {
+        prototype: HTMLKryptandTextButtonElement;
+        new (): HTMLKryptandTextButtonElement;
     };
     interface HTMLNavBackButtonElement extends Components.NavBackButton, HTMLStencilElement {
     }
@@ -168,48 +144,25 @@ declare global {
         prototype: HTMLPreviewUploadImageElement;
         new (): HTMLPreviewUploadImageElement;
     };
-    interface HTMLTextButtonElement extends Components.TextButton, HTMLStencilElement {
-    }
-    var HTMLTextButtonElement: {
-        prototype: HTMLTextButtonElement;
-        new (): HTMLTextButtonElement;
-    };
     interface HTMLElementTagNameMap {
         "authentication-root": HTMLAuthenticationRootElement;
-        "input-with-icon": HTMLInputWithIconElement;
         "kryptand-centered-card": HTMLKryptandCenteredCardElement;
-        "kryptand-external-login-button": HTMLKryptandExternalLoginButtonElement;
         "kryptand-external-logins": HTMLKryptandExternalLoginsElement;
         "kryptand-introduction-card": HTMLKryptandIntroductionCardElement;
         "kryptand-login-container": HTMLKryptandLoginContainerElement;
         "kryptand-login-form": HTMLKryptandLoginFormElement;
+        "kryptand-login-register-form": HTMLKryptandLoginRegisterFormElement;
         "kryptand-product-icon": HTMLKryptandProductIconElement;
+        "kryptand-text-button": HTMLKryptandTextButtonElement;
         "nav-back-button": HTMLNavBackButtonElement;
         "popover-menu": HTMLPopoverMenuElement;
         "preview-upload-image": HTMLPreviewUploadImageElement;
-        "text-button": HTMLTextButtonElement;
     }
 }
 declare namespace LocalJSX {
     interface AuthenticationRoot {
     }
-    interface InputWithIcon {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface KryptandCenteredCard {
-    }
-    interface KryptandExternalLoginButton {
     }
     interface KryptandExternalLogins {
         "onFacebookButtonClicked"?: (event: CustomEvent<any>) => void;
@@ -223,11 +176,17 @@ declare namespace LocalJSX {
         "theme"?: 'light' | 'dark';
     }
     interface KryptandLoginForm {
-        "onEmailLabel"?: (event: CustomEvent<any>) => void;
         "onFormSubmit"?: (event: CustomEvent<{ email: string; password: string }>) => void;
+    }
+    interface KryptandLoginRegisterForm {
+        "buttonLabel"?: string;
+        "onLogFormSubmit"?: (event: CustomEvent<{ email: string; password: string }>) => void;
     }
     interface KryptandProductIcon {
         "theme"?: 'dark' | 'light';
+    }
+    interface KryptandTextButton {
+        "type"?: string;
     }
     interface NavBackButton {
         /**
@@ -271,34 +230,19 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
-    interface TextButton {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
         "authentication-root": AuthenticationRoot;
-        "input-with-icon": InputWithIcon;
         "kryptand-centered-card": KryptandCenteredCard;
-        "kryptand-external-login-button": KryptandExternalLoginButton;
         "kryptand-external-logins": KryptandExternalLogins;
         "kryptand-introduction-card": KryptandIntroductionCard;
         "kryptand-login-container": KryptandLoginContainer;
         "kryptand-login-form": KryptandLoginForm;
+        "kryptand-login-register-form": KryptandLoginRegisterForm;
         "kryptand-product-icon": KryptandProductIcon;
+        "kryptand-text-button": KryptandTextButton;
         "nav-back-button": NavBackButton;
         "popover-menu": PopoverMenu;
         "preview-upload-image": PreviewUploadImage;
-        "text-button": TextButton;
     }
 }
 export { LocalJSX as JSX };
@@ -306,18 +250,17 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "authentication-root": LocalJSX.AuthenticationRoot & JSXBase.HTMLAttributes<HTMLAuthenticationRootElement>;
-            "input-with-icon": LocalJSX.InputWithIcon & JSXBase.HTMLAttributes<HTMLInputWithIconElement>;
             "kryptand-centered-card": LocalJSX.KryptandCenteredCard & JSXBase.HTMLAttributes<HTMLKryptandCenteredCardElement>;
-            "kryptand-external-login-button": LocalJSX.KryptandExternalLoginButton & JSXBase.HTMLAttributes<HTMLKryptandExternalLoginButtonElement>;
             "kryptand-external-logins": LocalJSX.KryptandExternalLogins & JSXBase.HTMLAttributes<HTMLKryptandExternalLoginsElement>;
             "kryptand-introduction-card": LocalJSX.KryptandIntroductionCard & JSXBase.HTMLAttributes<HTMLKryptandIntroductionCardElement>;
             "kryptand-login-container": LocalJSX.KryptandLoginContainer & JSXBase.HTMLAttributes<HTMLKryptandLoginContainerElement>;
             "kryptand-login-form": LocalJSX.KryptandLoginForm & JSXBase.HTMLAttributes<HTMLKryptandLoginFormElement>;
+            "kryptand-login-register-form": LocalJSX.KryptandLoginRegisterForm & JSXBase.HTMLAttributes<HTMLKryptandLoginRegisterFormElement>;
             "kryptand-product-icon": LocalJSX.KryptandProductIcon & JSXBase.HTMLAttributes<HTMLKryptandProductIconElement>;
+            "kryptand-text-button": LocalJSX.KryptandTextButton & JSXBase.HTMLAttributes<HTMLKryptandTextButtonElement>;
             "nav-back-button": LocalJSX.NavBackButton & JSXBase.HTMLAttributes<HTMLNavBackButtonElement>;
             "popover-menu": LocalJSX.PopoverMenu & JSXBase.HTMLAttributes<HTMLPopoverMenuElement>;
             "preview-upload-image": LocalJSX.PreviewUploadImage & JSXBase.HTMLAttributes<HTMLPreviewUploadImageElement>;
-            "text-button": LocalJSX.TextButton & JSXBase.HTMLAttributes<HTMLTextButtonElement>;
         }
     }
 }

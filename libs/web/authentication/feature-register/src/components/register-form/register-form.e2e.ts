@@ -1,20 +1,20 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('input-with-icon', () => {
+describe('register-form', () => {
   it('renders', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<input-with-icon></input-with-icon>');
-    const element = await page.find('input-with-icon');
+    await page.setContent('<register-form></register-form>');
+    const element = await page.find('register-form');
     expect(element).toHaveClass('hydrated');
   });
 
   it('renders changes to the name data', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<input-with-icon></input-with-icon>');
-    const component = await page.find('input-with-icon');
-    const element = await page.find('input-with-icon >>> div');
+    await page.setContent('<register-form></register-form>');
+    const component = await page.find('register-form');
+    const element = await page.find('register-form >>> div');
     expect(element.textContent).toEqual(`Hello, World! I'm `);
 
     component.setProperty('first', 'James');

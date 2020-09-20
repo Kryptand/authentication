@@ -1,31 +1,18 @@
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'text-button',
+  tag: 'kryptand-text-button',
   styleUrl: 'text-button.css',
-  shadow: true,
+  shadow: false,
 })
 export class TextButton {
-  /**
-   * The first name
-   */
-  @Prop() first: string;
-
-  /**
-   * The middle name
-   */
-  @Prop() middle: string;
-
-  /**
-   * The last name
-   */
-  @Prop() last: string;
-
-  private getText(): string {
-    return `${this.first} ${this.middle}, ${this.last}`;
-  }
+  @Prop() type: string;
 
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    return (
+      <button type={this.type}>
+        <slot/>
+      </button>
+    );
   }
 }

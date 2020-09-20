@@ -1,6 +1,18 @@
 :host {
   display: block;
+  height: 100%;
 }
 .dark {
   background: #333333;
+}
+.switch-type {
+  padding-left: 0.313rem;
+}
+
+@media only screen and (min-width: 45em) {
+  .flex-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
 }

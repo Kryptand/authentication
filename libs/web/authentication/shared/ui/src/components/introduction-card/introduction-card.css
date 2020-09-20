@@ -1,3 +1,37 @@
 :host {
   display: block;
+  padding: 0 4%;
+}
+@media only screen and (min-width: 45em) {
+  :host {
+    padding: 0 11% !important;
+  }
+  .icon {
+    padding-top: 3rem !important;
+  }
+}
+.icon {
+  padding-top: 1.078rem;
+}
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.563rem;
+  letter-spacing: -0.035em;
+  padding-top: 1.719rem;
+}
+.subtitle {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  letter-spacing: -0.035em;
+  padding-top: 0.938rem;
+  padding-bottom: 2.188rem;
+}
+.mode-switch {
+  padding-top: 2.125rem;
+  text-align: center;
+  padding-bottom: 3.688rem;
 }

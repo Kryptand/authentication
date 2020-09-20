@@ -1,36 +1,36 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { InputWithIcon } from './input-with-icon';
+import { RegisterForm } from './register-form';
 
-describe('input-with-icon', () => {
+describe('register-form', () => {
   it('renders', async () => {
     const {root} = await newSpecPage({
-      components: [InputWithIcon],
-      html: '<input-with-icon></input-with-icon>'
+      components: [RegisterForm],
+      html: '<register-form></register-form>'
     });
     expect(root).toEqualHtml(`
-      <input-with-icon>
+      <register-form>
         <mock:shadow-root>
           <div>
             Hello, World! I'm
           </div>
         </mock:shadow-root>
-      </input-with-icon>
+      </register-form>
     `);
   });
 
   it('renders with values', async () => {
     const {root} = await newSpecPage({
-      components: [InputWithIcon],
-      html: `<input-with-icon first="Stencil" last="'Don't call me a framework' JS"></input-with-icon>`
+      components: [RegisterForm],
+      html: `<register-form first="Stencil" last="'Don't call me a framework' JS"></register-form>`
     });
     expect(root).toEqualHtml(`
-      <input-with-icon first="Stencil" last="'Don't call me a framework' JS">
+      <register-form first="Stencil" last="'Don't call me a framework' JS">
         <mock:shadow-root>
           <div>
             Hello, World! I'm Stencil 'Don't call me a framework' JS
           </div>
         </mock:shadow-root>
-      </input-with-icon>
+      </register-form>
     `);
   });
 });

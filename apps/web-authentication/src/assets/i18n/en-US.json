@@ -1,6 +1,7 @@
 {
-  "loginTitle": "Join thousands of learners from around the world",
-  "loginSubtitle": "Master web development by making real-life projects. There are multiple paths for you to choose",
+  "registerTitle": "Join thousands of learners from around the world",
+  "registerSubtitle": "Master web development by making real-life projects. There are multiple paths for you to choose",
+  "loginTitle": "Login",
   "mail": "Email",
   "password": "Password",
   "registerButtonText": "Start coding now",

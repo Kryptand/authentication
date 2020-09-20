@@ -1,16 +1,16 @@
-import { Component, h, Event, EventEmitter } from '@stencil/core';
+import { Component, Event, EventEmitter, h } from '@stencil/core';
 
 @Component({
-  tag: 'kryptand-login-form',
-  styleUrl: 'login-form.css',
+  tag: 'register-form',
+  styleUrl: 'register-form.css',
   shadow: true,
 })
-export class LoginForm {
+export class RegisterForm {
   @Event() formSubmit: EventEmitter<{ email: string; password: string }>;
   render() {
     return (
       <kryptand-login-register-form
-        buttonLabel="loginButtonText"
+        buttonLabel="registerButtonText"
         onLogFormSubmit={(ev) => this.formSubmit.emit(ev.detail)}
       />
     );

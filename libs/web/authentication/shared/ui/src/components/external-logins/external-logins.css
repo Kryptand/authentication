@@ -1,9 +1,16 @@
 :host {
-  display: flex;
+  display: block;
+  width: 100%;
 }
 svg {
   cursor: pointer;
 }
 .social-logins {
-  padding: 30px;
+  padding: 1.875rem 0;
+  width: 100%;
+  text-align: center;
+}
+.login-buttons {
+  display: flex;
+  justify-content: space-evenly;
 }

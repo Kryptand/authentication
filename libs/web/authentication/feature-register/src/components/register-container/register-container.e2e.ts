@@ -1,20 +1,20 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('external-login-button', () => {
+describe('register-container', () => {
   it('renders', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<external-login-button></external-login-button>');
-    const element = await page.find('external-login-button');
+    await page.setContent('<register-container></register-container>');
+    const element = await page.find('register-container');
     expect(element).toHaveClass('hydrated');
   });
 
   it('renders changes to the name data', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<external-login-button></external-login-button>');
-    const component = await page.find('external-login-button');
-    const element = await page.find('external-login-button >>> div');
+    await page.setContent('<register-container></register-container>');
+    const component = await page.find('register-container');
+    const element = await page.find('register-container >>> div');
     expect(element.textContent).toEqual(`Hello, World! I'm `);
 
     component.setProperty('first', 'James');
